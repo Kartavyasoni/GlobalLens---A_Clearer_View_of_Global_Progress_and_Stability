@@ -1,4 +1,5 @@
-# Validation for API Responses
+### DATA VALIDATION MODULE ###
+# This module provides validation utilities for API responses.
 
 def validate_api_response(response):
     """Validate the API response structure."""

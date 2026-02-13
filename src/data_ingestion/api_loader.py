@@ -1,12 +1,15 @@
-# API Loader for World Bank Data.
-# Uses requests to fetch data from the World Bank API.
+### API DATA LOADER ###
+# This module fetches data from the World Bank API.
 
 import requests
 from config import WORLD_BANK_API_URL
 from validation import validate_api_response
 
+# Function to fetch data from World Bank API
 def fetch_world_bank_data(indicator, params):
-    """Fetch data from the World Bank API for a given indicator."""
+    '''
+    Fetch data from the World Bank API for a given indicator.
+    '''
     url = f"{WORLD_BANK_API_URL}/country/all/indicator/{indicator}"
     response = requests.get(url, params=params)
     
@@ -18,13 +21,17 @@ def fetch_world_bank_data(indicator, params):
     
     return data
 
+# Function to fetch multiple indicators
 def fetch_multiple_indicators(indicators, params):
-    """Fetch data for multiple indicators."""
+    '''
+     Fetch data for multiple indicators.
+    '''
     all_data = {}
     for indicator in indicators:
         all_data[indicator] = fetch_world_bank_data(indicator, params)
     return all_data
 
+# Example usage
 if __name__ == "__main__":
     # Example usage
     indicators = ["SP.POP.TOTL", "NY.GDP.MKTP.CD"]

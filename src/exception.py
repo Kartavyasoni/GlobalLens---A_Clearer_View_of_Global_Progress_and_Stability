@@ -1,8 +1,10 @@
+### EXCEPTION HANDLING ###
 # This module defines a custom exception class and a function to generate detailed error messages.
 
 import sys
 from src.logger import logging
 
+# Function to generate detailed error message
 def error_message_details(error, error_detail: sys):
     '''
     Generate a detailed error message from an exception.
@@ -13,6 +15,8 @@ def error_message_details(error, error_detail: sys):
     
     return error_message
 
+
+# Custom Exception Class
 class CustomException(Exception):
     '''
     Custom exception class that extends the base Exception class.
